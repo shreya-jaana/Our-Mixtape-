@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Mixtape | For Sarib</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-main: #f2f2f2;
+            --accent-red: #8b0000;
+            --accent-gold: #c5a059;
+            --card-bg: #151515;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-top: 50px;
+            animation: fadeIn 2s ease-in;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Player Section */
+        .player-container {
+            background-color: var(--card-bg);
+            width: 85%;
+            max-width: 400px;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.15);
+            text-align: center;
+            border: 1px solid #222;
+        }
+
+        .album-art {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--accent-red), #2b0000);
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .album-art::after {
+            content: '';
+            width: 35px;
+            height: 35px;
+            background-color: var(--card-bg);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .spin {
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .song-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .artist {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Custom Play Button */
+        .play-btn {
+            background-color: var(--accent-red);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            background-color: #a30000;
+        }
+
+        /* Tracklist / Memories */
+        .tracklist {
+            width: 90%;
+            max-width: 500px;
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+
+        .track {
+            background-color: var(--card-bg);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-gold);
+            transition: 0.3s;
+        }
+
+        .track:hover {
+            transform: translateX(10px);
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .track h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.5px;
+        }
+
+        .track p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #bbb;
+        }
+
+        /* Secret Note Section */
+        .secret-note {
+            width: 90%;
+            max-width: 500px;
+            margin-bottom: 80px;
+        }
+
+        .secret-note h2 {
+            color: var(--accent-red);
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .letter-content {
+            background-color: #111;
+            padding: 30px 25px;
+            border-radius: 12px;
+            border-top: 2px solid var(--accent-red);
+            border-bottom: 2px solid var(--accent-gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            font-family: 'Georgia', serif;
+            color: #ddd;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .hindi-poem {
+            text-align: center;
+            color: var(--accent-gold);
+            font-size: 1.15rem;
+            margin: 25px 0;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 20px;
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Vol. 17</h1>
+        <p class="subtitle">A midnight mixtape for Saiz. Happy Birthday Eve.</p>
+    </header>
+
+    <div class="player-container">
+        <div class="album-art" id="record"></div>
+        
+        <div class="song-title">Our Song</div>
+        <div class="artist">Play Me</div>
+
+        <audio id="myAudio" src="our-song.mp3"></audio>
+        
+        <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+    </div>
+
+    <div class="tracklist">
+        <div class="track">
+            <h3>Track 01: The Server Icon</h3>
+            <p>It started in the digital world of Discord. A simple request for a server icon, but neither of us knew we were actually designing the foundation of our entire universe.</p>
+        </div>
+        
+        <div class="track">
+            <h3>Track 02: The Accidental Lifeline</h3>
+            <p>You were sitting in the dark of that store room, fighting your heaviest thoughts and ready to let go of everything. Then came my clumsy mistake—an accidental camera click. You hadn't even seen my face yet, just a blurry view of me furiously erasing a table. But it made you laugh. That laugh broke the darkness, pulled you back to the light, and quietly sparked a love that saved you.</p>
+        </div>
+        
+        <div class="track">
+            <h3>Track 03: The Gravity of Differences</h3>
+            <p>Months later, you finally poured your heart out to me. I was terrified. Our ages, our religions, our entirely different worlds—it felt like an impossible divide. I said no because my heart wasn't ready to risk giving love a chance, but yours was already completely certain.</p>
+        </div>
+        
+        <div class="track">
+            <h3>Track 04: A Night of Prayers</h3>
+            <p>You didn't fight my rejection with anger; you fought it with pure devotion. You stayed awake the entire night, praying to the universe just to keep your reason to smile safe. And the very next day, the universe listened.</p>
+        </div>
+        
+        <div class="track">
+            <h3>Track 05: March 28, 2025</h3>
+            <p>The day my walls finally fell. The gravity of what we had was too heavy to ignore. I was too nervous to say it live on our call, but I couldn't hold the words back anymore. That one single voice note changed our lives forever: <i>"Call pe toh nhi bol paye per yaha bol dete h... I love you Saiz."</i></p>
+        </div>
+
+        <div class="track">
+            <h3>Track 06: Tomorrow & Always</h3>
+            <p>From a screen to holding each other's hearts. Our journey has defied every odd, every doubt, and every boundary. Tomorrow, we celebrate the day you were born—the boy who prayed for a smile, and ended up becoming my whole world.</p>
+        </div>
+    </div>
+
+    <div class="secret-note">
+        <h2>A Note for Midnight</h2>
+        <div class="letter-content">
+            <p>To my dearest Sarib,</p>
+            
+            <p>When I think about March 9, 2009, I realize the universe was already writing our story long before we ever logged into Discord. It was preparing a soul that would eventually collide with mine in the most unexpected way.</p>
+            
+            <p>There was a time when the heavy darkness of that store room almost took you away before I even knew who you were. But fate has a beautiful, stubborn way of working. An accidental camera click, a clumsy moment of me erasing a table, and your sudden laugh—that was the exact second the shadows broke. You always tell me that I saved you that day, but the truth is, Saiz, your love has been my sanctuary too.</p>
+            
+            <p>I was so terrified at first. The differences between us—our ages, our religions, the entirely different worlds we came from—felt like walls too high to climb. I tried to protect myself by saying no, but your heart was entirely certain. You stayed awake, pouring your soul into prayers just to keep our connection alive, and those prayers were so much louder than my fears.</p>
+            
+            <p>Then came March 28, 2025. My walls finally crumbled. <i>Call pe toh nhi bol paye per yaha bol dete h... I love you Saiz.</i> That single voice note was my surrender, and it was the best decision of my life. You are the boy who fought for my smile, the one who loved me in the dark before you even saw my face in the light.</p>
+            
+            <div class="hindi-poem">
+                अंधेरों से खींच कर लाई है तुम्हारी मोहब्बत मुझे,<br>
+                अब इन लकीरों में सिर्फ तुम्हारा ही नाम है।
+            </div>
+            
+            <p>Happy Birthday, Sarib. Here is to 17, to the boundaries we shattered, and to all the midnights we have yet to share.</p>
+            
+            <div class="signature">
+                Forever yours,<br>
+                Shreya
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var myAudio = document.getElementById("myAudio");
+        var playBtn = document.getElementById("playBtn");
+        var record = document.getElementById("record");
+        var isPlaying = false;
+
+        function togglePlay() {
+            if (isPlaying) {
+                myAudio.pause();
+                playBtn.innerHTML = "▶";
+                record.classList.remove("spin");
+            } else {
+                myAudio.play();
+                playBtn.innerHTML = "⏸";
+                record.classList.add("spin");
+            }
+            isPlaying = !isPlaying;
+        }
+
+        myAudio.onended = function() {
+            isPlaying = false;
+            playBtn.innerHTML = "▶";
+            record.classList.remove("spin");
+        };
+    </script>
+
+</body>
+</html>
